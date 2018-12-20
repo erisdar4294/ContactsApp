@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ContactsApp
 {
@@ -24,12 +22,12 @@ namespace ContactsApp
         /// <summary>
         /// Номер телефона контакта
         /// </summary>
-        public PhoneNumber _phoneNumber = new PhoneNumber();
+        public PhoneNumber phoneNumber = new PhoneNumber();
 
         /// <summary>
         /// Дата рождения контакта
         /// </summary>
-        private DateTime _birthday;
+        private DateTime _dateOfBirth;
 
         /// <summary>
         /// E-mail контакта
@@ -61,7 +59,22 @@ namespace ContactsApp
                     throw new ArgumentException("Вы ввели пустую строку. Повторите ввод");
                 }
                 else
-                    _surname = value;
+                {
+                    //Вся строка в нижний регистр
+                    value.ToLower();
+
+                    //Представляем строку как массив чар
+                    char[] familyChar = value.ToCharArray();
+
+                    //1 элемент массива в верхний регистр
+                    familyChar[0] = char.ToUpper(familyChar[0]);
+
+                    //Переписываем в стринг
+                    string familyString = new string(familyChar);
+
+                    //Вносим данные
+                    _surname = familyString;
+                }
             }
         }
 
@@ -85,17 +98,22 @@ namespace ContactsApp
                     throw new ArgumentException("Вы ввели пустую строку. Повторите ввод");
                 }
                 else
-                    _name = value;
-            }
-        }
+                {
+                    //Вся строка в нижний регистр
+                    value.ToLower();
 
-        /// <summary>
-        /// Метод, устанавливающий ограничения на номер телефона контакта
-        /// </summary>
-        public PhoneNumber PhoneNumber
-        {
-            get { return _phoneNumber; }
-            set { _phoneNumber = value; }
+                    //Представляем строку как массив чар
+                    char[] nameChar = value.ToCharArray();
+
+                    //1 элемент массива в верхний регистр
+                    nameChar[0] = char.ToUpper(nameChar[0]);
+
+                    //Переписываем в стринг
+                    string nameString = new string(nameChar);
+
+                    _name = nameString;
+                }
+            }
         }
 
         /// <summary>
@@ -106,24 +124,24 @@ namespace ContactsApp
         /// <summary>
         /// Метод, устанавливающий ограничения на дату рождения контакта.
         /// </summary>
-        public DateTime Birthday
+        public DateTime DateOfBirth
         {
-            get { return _birthday; }
+            get { return _dateOfBirth; }
             set
             {
                 //Дата рождения не может быть раньше 1 января 1900 года
                 if (value < _dateMinimum)
                 {
-                    throw new ArgumentException( "Введенная дата не может быть раньше 1900 года");
+                    throw new ArgumentException("Введенная дата не может быть раньше 1900 года");
                 }
 
                 //Дата рождения не может быть больше нынешней даты
-                if (value > DateTime.Today)
+                if (value > DateTime.Now)
                 {
-                    throw new ArgumentException(" Дата рождения не может быть позже нынешней");
+                    throw new ArgumentException("Дата рождения не может быть позже нынешней");
                 }
                 else
-                    _birthday = value;
+                    _dateOfBirth = value;
             }
         }
 
@@ -175,23 +193,34 @@ namespace ContactsApp
             }
         }
 
-
-        public Contact()
-        { }
-
-        public Contact(string surname, string name)
+        /// <summary>
+        /// Конструктор класса с 6 входными параметрами
+        /// </summary>
+        public Contact(long phoneNumber, string name, string surname, string email, DateTime dateOfBirth,
+            string idVk)
         {
-            Surname = surname;
+            this.phoneNumber.Number = phoneNumber;
             Name = name;
+            Surname = surname;
+            Email = email;
+            DateOfBirth = dateOfBirth;
+            IdVk = idVk;
         }
 
         /// <summary>
-        /// Реализация интерфейса ICloneable (клонирование) для имен и фамилий
+        /// Реализация клонирования
         /// </summary>
+        /// <returns>Возвращает объект - клон контакта, с полями: номер телефона, имя, фамилия, емейл, дата рождения, айди вк.</returns>
         public object Clone()
         {
-            return new Contact(Name, Surname);
+            return new Contact(phoneNumber.Number, Name, Surname, Email, DateOfBirth, IdVk);
         }
 
+        /// <summary>
+        /// Конструктор по умолчанию
+        /// </summary>
+        public Contact()
+        {   }
     }
 }
+

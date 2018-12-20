@@ -1,6 +1,6 @@
 ﻿namespace ContactsAppUI
 {
-    partial class aboutForm
+    partial class AboutForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(aboutForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             this.ContactsLabel = new System.Windows.Forms.Label();
             this.VersionLabel = new System.Windows.Forms.Label();
             this.AutorLabel = new System.Windows.Forms.Label();
@@ -96,7 +96,7 @@
             this.GitLabel.Location = new System.Drawing.Point(15, 168);
             this.GitLabel.Name = "GitLabel";
             this.GitLabel.Size = new System.Drawing.Size(52, 16);
-            this.GitLabel.TabIndex = 9;
+            this.GitLabel.TabIndex = 10;
             this.GitLabel.Text = "GitHub:";
             // 
             // CopyRightLabel
@@ -108,7 +108,7 @@
             this.CopyRightLabel.Location = new System.Drawing.Point(15, 252);
             this.CopyRightLabel.Name = "CopyRightLabel";
             this.CopyRightLabel.Size = new System.Drawing.Size(158, 16);
-            this.CopyRightLabel.TabIndex = 10;
+            this.CopyRightLabel.TabIndex = 12;
             this.CopyRightLabel.Text = "2018 Stanislav Zubarev ©";
             // 
             // EmailLink
@@ -120,7 +120,7 @@
             this.EmailLink.Location = new System.Drawing.Point(148, 145);
             this.EmailLink.Name = "EmailLink";
             this.EmailLink.Size = new System.Drawing.Size(145, 16);
-            this.EmailLink.TabIndex = 11;
+            this.EmailLink.TabIndex = 9;
             this.EmailLink.TabStop = true;
             this.EmailLink.Text = "stas02.121994@mail.ru";
             // 
@@ -133,11 +133,11 @@
             this.GitLink.Location = new System.Drawing.Point(73, 168);
             this.GitLink.Name = "GitLink";
             this.GitLink.Size = new System.Drawing.Size(147, 16);
-            this.GitLink.TabIndex = 12;
+            this.GitLink.TabIndex = 11;
             this.GitLink.TabStop = true;
             this.GitLink.Text = "github.com/erisdar4294";
             // 
-            // aboutForm
+            // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -153,7 +153,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(400, 325);
             this.MinimumSize = new System.Drawing.Size(400, 325);
-            this.Name = "aboutForm";
+            this.Name = "AboutForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "About";
             this.ResumeLayout(false);

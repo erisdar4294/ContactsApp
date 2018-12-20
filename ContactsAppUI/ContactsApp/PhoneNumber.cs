@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ContactsApp
 {
@@ -22,7 +20,7 @@ namespace ContactsApp
             set
             {
                 //Первая цифра номера должна быть 7
-                if (value < 70000000000 || value > 79999999999)
+                if (value.ToString()[0]!='7')
                 {
                     throw new ArgumentException("Введите номер телефона, начинающийся с 7");
                 }
@@ -38,8 +36,18 @@ namespace ContactsApp
                 {
                     throw new ArgumentException("Вы ввели меньше 11 цифр, введите номер, состоящий из 11 цифр");
                 }
+
+                //Проверка на пустую строку
+                if (String.IsNullOrWhiteSpace(value.ToString()))
+                {
+                    throw new ArgumentException("Вы ввели пустую строку. Повторите ввод");
+                }
+
+                //Иначе присваиваем переменной номер
                 else
+                {
                     _number = value;
+                }
             }
         }
     }

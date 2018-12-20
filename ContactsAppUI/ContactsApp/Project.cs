@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ContactsApp
 {
@@ -11,6 +9,6 @@ namespace ContactsApp
     /// </summary>
     public class Project
     {
-        public List<Contact> Contacts = new List<Contact>();
+        public List<Contact> contactsList = new List<Contact>();
     }
 }

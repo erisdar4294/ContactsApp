@@ -53,6 +53,12 @@ namespace ContactsApp
                     throw new ArgumentException("Введите фамилию, длиной менее 50 символов");
                 }
 
+                //Фамилия не может быть короче 2 символов
+                if (value.Length < 2)
+                {
+                    throw new ArgumentException("Введите фамилию, длиной более 2 символов");
+                }
+
                 //Проверка на пустую строку
                 if (String.IsNullOrWhiteSpace(value))
                 {
@@ -92,6 +98,12 @@ namespace ContactsApp
                     throw new ArgumentException("Введите имя, длиной менее 50 символов");
                 }
 
+                //Имя не может быть короче 2 символов
+                if (value.Length < 2)
+                {
+                    throw new ArgumentException("Введите имя, длиной более 2 символов");
+                }
+
                 //Проверка на пустую строку
                 if (String.IsNullOrWhiteSpace(value))
                 {
@@ -119,10 +131,10 @@ namespace ContactsApp
         /// <summary>
         /// Ограничение на устанавливаемую дату рождения (минимум 1 января 1900)
         /// </summary>
-        private DateTime _dateMinimum = new DateTime(1900, 01, 01);
+        private readonly DateTime _dateMinimum = new DateTime(1900, 01, 01);
 
         /// <summary>
-        /// Метод, устанавливающий ограничения на дату рождения контакта.
+        /// Метод, устанавливающий ограничения на дату рождения контакта
         /// </summary>
         public DateTime DateOfBirth
         {
@@ -158,7 +170,6 @@ namespace ContactsApp
                 {
                     throw new ArgumentException("Введите e-mail, длиной менее 50 символов");
                 }
-
                 //Проверка на пустую строку
                 if (String.IsNullOrWhiteSpace(value))
                 {
@@ -182,7 +193,6 @@ namespace ContactsApp
                 {
                     throw new ArgumentException("Введите ID, длиной менее 15 символов");
                 }
-
                 //Проверка на пустую строку
                 if (String.IsNullOrWhiteSpace(value))
                 {

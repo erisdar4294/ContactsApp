@@ -19,7 +19,7 @@ namespace ContactsApp
             get { return _number; }
             set
             {
-                //Первая цифра номера должна быть 7
+                //Телефон может начинаться только с цифры 7
                 if (value.ToString()[0]!='7')
                 {
                     throw new ArgumentException("Введите номер телефона, начинающийся с 7");
@@ -36,13 +36,7 @@ namespace ContactsApp
                 {
                     throw new ArgumentException("Вы ввели меньше 11 цифр, введите номер, состоящий из 11 цифр");
                 }
-
-                //Проверка на пустую строку
-                if (String.IsNullOrWhiteSpace(value.ToString()))
-                {
-                    throw new ArgumentException("Вы ввели пустую строку. Повторите ввод");
-                }
-
+                
                 //Иначе присваиваем переменной номер
                 else
                 {

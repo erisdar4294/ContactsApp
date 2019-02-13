@@ -48,7 +48,7 @@
             this.ContactsLabel.Location = new System.Drawing.Point(13, 13);
             this.ContactsLabel.Name = "ContactsLabel";
             this.ContactsLabel.Size = new System.Drawing.Size(182, 31);
-            this.ContactsLabel.TabIndex = 5;
+            this.ContactsLabel.TabIndex = 1;
             this.ContactsLabel.Text = "ContactsApp";
             // 
             // VersionLabel
@@ -60,7 +60,7 @@
             this.VersionLabel.Location = new System.Drawing.Point(15, 51);
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(48, 16);
-            this.VersionLabel.TabIndex = 6;
+            this.VersionLabel.TabIndex = 2;
             this.VersionLabel.Text = "v. 1.0.0";
             // 
             // AutorLabel
@@ -72,7 +72,7 @@
             this.AutorLabel.Location = new System.Drawing.Point(15, 90);
             this.AutorLabel.Name = "AutorLabel";
             this.AutorLabel.Size = new System.Drawing.Size(153, 16);
-            this.AutorLabel.TabIndex = 7;
+            this.AutorLabel.TabIndex = 3;
             this.AutorLabel.Text = "Autor: Stanislav Zubarev";
             // 
             // emailLabel
@@ -84,7 +84,7 @@
             this.emailLabel.Location = new System.Drawing.Point(15, 145);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(127, 16);
-            this.emailLabel.TabIndex = 8;
+            this.emailLabel.TabIndex = 4;
             this.emailLabel.Text = "E-mail for feedback:";
             // 
             // GitLabel
@@ -96,7 +96,7 @@
             this.GitLabel.Location = new System.Drawing.Point(15, 168);
             this.GitLabel.Name = "GitLabel";
             this.GitLabel.Size = new System.Drawing.Size(52, 16);
-            this.GitLabel.TabIndex = 10;
+            this.GitLabel.TabIndex = 6;
             this.GitLabel.Text = "GitHub:";
             // 
             // CopyRightLabel
@@ -108,7 +108,7 @@
             this.CopyRightLabel.Location = new System.Drawing.Point(15, 252);
             this.CopyRightLabel.Name = "CopyRightLabel";
             this.CopyRightLabel.Size = new System.Drawing.Size(158, 16);
-            this.CopyRightLabel.TabIndex = 12;
+            this.CopyRightLabel.TabIndex = 8;
             this.CopyRightLabel.Text = "2018 Stanislav Zubarev ©";
             // 
             // EmailLink
@@ -120,7 +120,7 @@
             this.EmailLink.Location = new System.Drawing.Point(148, 145);
             this.EmailLink.Name = "EmailLink";
             this.EmailLink.Size = new System.Drawing.Size(145, 16);
-            this.EmailLink.TabIndex = 9;
+            this.EmailLink.TabIndex = 5;
             this.EmailLink.TabStop = true;
             this.EmailLink.Text = "stas02.121994@mail.ru";
             // 
@@ -133,7 +133,7 @@
             this.GitLink.Location = new System.Drawing.Point(73, 168);
             this.GitLink.Name = "GitLink";
             this.GitLink.Size = new System.Drawing.Size(147, 16);
-            this.GitLink.TabIndex = 11;
+            this.GitLink.TabIndex = 7;
             this.GitLink.TabStop = true;
             this.GitLink.Text = "github.com/erisdar4294";
             // 

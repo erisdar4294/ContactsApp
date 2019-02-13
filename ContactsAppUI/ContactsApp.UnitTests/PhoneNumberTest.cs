@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using ContactsApp;
 
 namespace ContactsApp.UnitTests
 {
@@ -16,7 +15,7 @@ namespace ContactsApp.UnitTests
         [SetUp]
         public void InitNumber()
         {
-            _phoneNumber = new PhoneNumber();
+            _phoneNumber=new PhoneNumber();
         }
 
         /// <summary>
@@ -28,9 +27,6 @@ namespace ContactsApp.UnitTests
             TestName = "Присвоение number номера телефона, который длиннее 11 символов")]
         [TestCase("1234567891", "Должно возникать исключение, если введенный номер короче 11 символов",
             TestName = "Присвоение number номера телефона, который короче 11 символов")]
-        [TestCase("", "Должно возникать исключение, если поле phone - пустая строка",
-            Ignore = "Видимо ошибка преобразования пустой строки в лонг",
-            TestName = "Присвоение пустой строки в качестве поля phone")]
         public void TestPhoneNumberSet_ArgumentException(string wrongPhoneNumber, string message)
         {
             Assert.Throws<ArgumentException>(
@@ -38,7 +34,7 @@ namespace ContactsApp.UnitTests
                 message);
         }
 
-        [TestCase("79998887766", "Тест пройден, если фамилия успешно присвоилась",
+        [TestCase("79998887766", "Тест пройден, если номер телефона присвоен успешно",
             TestName = "Присвоение правильного номера телефона.")]
         public void TestPhoneNumberSet_CorrectArgument(string correctNumber, string message)
         {

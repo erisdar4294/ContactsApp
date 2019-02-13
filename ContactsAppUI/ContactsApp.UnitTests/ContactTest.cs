@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
-using ContactsApp;
 
 namespace ContactsApp.UnitTests
 {
@@ -97,7 +96,7 @@ namespace ContactsApp.UnitTests
                 message);
         }
 
-        [TestCase("smirnov.alex@gmail.com", "Тест не пройден, е-мейл присвоен неверно",
+        [TestCase("smirnov.nikolay@gmail.com", "Тест не пройден, е-мейл присвоен неверно",
             TestName = "Присвоение правильного е-мейла")]
         public void TestEmailSet_CorrectArgument(string correctEmail, string message)
         {
@@ -118,7 +117,7 @@ namespace ContactsApp.UnitTests
         /// </summary>
         [TestCase("", "Должно возникать исключение, если поле id vk - пустая строка",
             TestName = "Присвоение пустой строки в качестве id vk")]
-        [TestCase("alexsmirnov19803015", "Должно возникать исключение, если id vk длиннее 15 символов",
+        [TestCase("nikolaysmirnov19803015", "Должно возникать исключение, если id vk длиннее 15 символов",
             TestName = "Присвоение неправильного id vk, больше 15 символов")]
         public void TestIdVkSet_ArgumentException(string wrongIdVk, string message)
         {
@@ -147,7 +146,7 @@ namespace ContactsApp.UnitTests
         /// </summary>
         [TestCase("1899, 01, 01", "Должно возникать исключение, если дата dateOfBirth меньше, чем 1900,01,01",
             TestName = "Присвоение dateOfBirth меньшее, чем 1900,01,01")]
-        [TestCase("2045, 01, 01", "Должно возникать исключение, если дата dateOfBirth больше нынешней",
+        [TestCase("3075, 01, 01", "Должно возникать исключение, если дата dateOfBirth больше нынешней",
             TestName = "Присвоение dateOfBirth большее, чем нынешняя даты")]
         public void TestDateOfBirthSet_ArgumentException(string wrongDateOfBirth, string message)
         {
@@ -165,49 +164,12 @@ namespace ContactsApp.UnitTests
                 message);
         }
 
-        [TestCase("1980, 01, 01", "Геттер dateOfBirth возвращает неверное имя",
+        [TestCase("1980, 01, 01", "Геттер dateOfBirth возвращает неверное значение",
             TestName = "Возвращение геттером dateOfBirth")]
         public void TestDateOfBirthGet_CorrectArgument(string correctDateOfBirth, string message)
         {
             _contact.DateOfBirth = DateTime.Parse(correctDateOfBirth);
             Assert.AreEqual(DateTime.Parse(correctDateOfBirth), _contact.DateOfBirth,
-                message);
-        }
-
-        /// <summary>
-        /// Тесты вызова свойства Номер телефона класса PhoneNumber
-        /// </summary>
-        [TestCase("11111111111", "Должно возникать исключение, если номер начинается не с 7",
-            TestName = "Присвоение number номера телефона, начинающегося не с 7")]
-        [TestCase("123456789123", "Должно возникать исключение, если введенный номер длиннее 11 символов",
-            TestName = "Присвоение number номера телефона, который длиннее 11 символов")]
-        [TestCase("1234567891", "Должно возникать исключение, если введенный номер короче 11 символов",
-            TestName = "Присвоение number номера телефона, который короче 11 символов")]
-        [TestCase("", "Должно возникать исключение, если поле phone - пустая строка",
-            Ignore = "Видимо ошибка преобразования пустой строки в лонг",
-            TestName = "Присвоение пустой строки в качестве поля phone")]
-        public void TestPhoneNumberSet_ArgumentException(string wrongPhoneNumber, string message)
-        {
-            Assert.Throws<ArgumentException>(
-                () => { _contact.phoneNumber.Number = Convert.ToInt64(wrongPhoneNumber); },
-                message);
-        }
-
-        [TestCase("79998887766", "Тест не пройден, фамилия присваивается неверно",
-            TestName = "Присвоение правильного номера телефона.")]
-        public void TestPhoneNumberSet_CorrectArgument(string correctNumber, string message)
-        {
-            _contact.phoneNumber.Number = Convert.ToInt64(correctNumber);
-            Assert.AreEqual(Convert.ToInt64(correctNumber), _contact.phoneNumber.Number,
-                message);
-        }
-
-        [TestCase("76665554433", "Геттер phone, возвращает неверный номер телефона",
-            TestName = "Возвращение геттером номера телефона")]
-        public void TestPhoneNumberGet_CorrectArgument(string correctNumber, string message)
-        {
-            _contact.phoneNumber.Number = Convert.ToInt64(correctNumber);
-            Assert.AreEqual(Convert.ToInt64(correctNumber), _contact.phoneNumber.Number,
                 message);
         }
     }
